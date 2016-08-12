@@ -20,4 +20,23 @@ public final class UserProfile {
     public String getPhone() {
         return phone;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof UserProfile)) return false;
+
+        UserProfile that = (UserProfile) o;
+
+        if (getEmail() != null ? !getEmail().equals(that.getEmail()) : that.getEmail() != null) return false;
+        return getPhone() != null ? getPhone().equals(that.getPhone()) : that.getPhone() == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        int result = getEmail() != null ? getEmail().hashCode() : 0;
+        result = 31 * result + (getPhone() != null ? getPhone().hashCode() : 0);
+        return result;
+    }
 }
