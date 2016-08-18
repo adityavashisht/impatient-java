@@ -1,4 +1,7 @@
-package com.impatient.legacy;
+package com.impatient.spring;
+
+import com.impatient.legacy.Ingredient;
+import com.impatient.legacy.Vegetable;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -25,6 +28,15 @@ public class SpringKitchenDemo {
         ingredientList.add(tomato);
 
         dishMaker.makeDish(ingredientList);
+
+       /* ChunkChopper chunkChopper = (ChunkChopper) context.getBean("chunkChopper");
+        System.out.println(chunkChopper);
+        chunkChopper.chop(tomato);
+        chunkChopper.destroy();
+
+        ChunkChopper chunkChopperTwo = (ChunkChopper) context.getBean("chunkChopper");
+        System.out.println(chunkChopperTwo);
+        chunkChopperTwo.chop(tomato);*/
 
 
     }

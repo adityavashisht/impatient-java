@@ -1,4 +1,6 @@
-package com.impatient.legacy;
+package com.impatient.spring;
+
+import com.impatient.legacy.Ingredient;
 
 /**
  * Created by vashishta on 8/16/16.

@@ -1,5 +1,8 @@
 package com.impatient.legacy;
 
+import com.impatient.spring.ChunkChopper;
+import com.impatient.spring.DishMaker;
+
 import java.util.ArrayList;
 import java.util.List;
 

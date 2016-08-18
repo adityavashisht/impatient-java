@@ -1,4 +1,6 @@
-package com.impatient.legacy;
+package com.impatient.spring;
+
+import com.impatient.legacy.Ingredient;
 
 import java.util.List;
 
