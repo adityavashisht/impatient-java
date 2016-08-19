@@ -1,11 +1,12 @@
 package com.impatient.spring;
 
-import com.impatient.legacy.Ingredient;
-import com.impatient.legacy.Vegetable;
 
+
+import com.lessons.spring.ChildBean;
+import com.lessons.spring.CollectionListBean;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 /**
@@ -16,27 +17,27 @@ public class SpringKitchenDemo {
 
     public static void main(String [] args) {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"/spring-kitchen.xml"});
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(new String[] {"/main-config.xml"});
+
+        ChildBean childBean = (ChildBean) context.getBean("childBean");
+
+        System.out.println(childBean.getName());
 
         DishMaker dishMaker = (DishMaker) context.getBean("dishMaker");
 
-        Vegetable tomato = new Vegetable();
-        tomato.setChop(true);
-        tomato.setName("Tomato");
+        Mixer mixer = dishMaker.getMixer();
 
-        List<Ingredient> ingredientList = new ArrayList<>();
-        ingredientList.add(tomato);
+        System.out.println(mixer);
+        //dishMaker.makeDish()
 
-        dishMaker.makeDish(ingredientList);
+        CollectionListBean  collectionListBean = (CollectionListBean) context.getBean("collectionListBean");
 
-       /* ChunkChopper chunkChopper = (ChunkChopper) context.getBean("chunkChopper");
-        System.out.println(chunkChopper);
-        chunkChopper.chop(tomato);
-        chunkChopper.destroy();
+        List<String> names = collectionListBean.getNames();
 
-        ChunkChopper chunkChopperTwo = (ChunkChopper) context.getBean("chunkChopper");
-        System.out.println(chunkChopperTwo);
-        chunkChopperTwo.chop(tomato);*/
+        for(String name:names) {
+            System.out.println(name);
+        }
+
 
 
     }

@@ -26,6 +26,14 @@ public class DishMaker implements InitializingBean {
         this.mixer = mixer;
     }
 
+    public Chopper getChopper() {
+        return chopper;
+    }
+
+    public Mixer getMixer() {
+        return mixer;
+    }
+
     public Dish makeDish(List<Ingredient> ingredientList) {
         System.out.println("Making a delicious dish...");
         for(Ingredient ingredient : ingredientList) {

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="parentBean" abstract="true" class="com.lessons.spring.ParentBean">
+        <property name="age" value="40"/>
+        <property name="heritage" value="INDIAN"/>
+        <property name="name" value="Ady"/>
+    </bean>
+
+
+    <bean id="childBean" parent="parentBean" class="com.lessons.spring.ChildBean">
+        <property name="height" value="12.3"/>
+        <property name="name" value="Oliver"/>
+
+    </bean>
+
+
+    <bean id="collectionListBean" class="com.lessons.spring.CollectionListBean">
+        <property name="names">
+
+            <list>
+                <value>Aditya</value>
+                <value>Siji</value>
+            </list>
+
+
+        </property>
+
+        <property name="maps">
+            <map>
+                <entry key="Aditya">
+
+                    <value>Vashisht</value>
+                </entry>
+            </map>
+        </property>
+
+        <property name="properties">
+            <props>
+                <prop key="Aditya">Vashisht</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="mixer" class="com.impatient.spring.GrateMixer"/>
+
+
+</beans>

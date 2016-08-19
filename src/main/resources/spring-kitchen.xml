@@ -14,7 +14,7 @@
 
     <bean  id="dicedChopper" class="com.impatient.spring.DicedChopper"/>
 
-    <bean id="blenderMixer" class="com.impatient.spring.BlenderMixer"/>
+    <bean id="mixer" class="com.impatient.spring.BlenderMixer"/>
 
     <bean id="dishMaker" class="com.impatient.spring.DishMaker" autowire="byType">
         <constructor-arg ref="dicedChopper"/>
@@ -23,5 +23,8 @@
         <property name="mixer" ref="blenderMixer"/>
         -->
      </bean>
+
+
+
 
 </beans>
