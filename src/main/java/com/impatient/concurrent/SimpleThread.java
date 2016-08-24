@@ -1,6 +1,6 @@
 package com.impatient.concurrent;
 
-import java.util.concurrent.Executor;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -18,6 +18,13 @@ public class SimpleThread {
                 System.out.println("Test");
             }
 
+        };
+
+        Runnable runnableAnonymous = new Runnable() {
+            @Override
+            public void run() {
+                System.out.print("Anonymous");
+            }
         };
 
         Runnable anotherR = () -> {
@@ -45,15 +52,11 @@ public class SimpleThread {
 
         anotherT.start();
 
-       /* Runnable now = new Runnable() {
-            @Override
-            public void run() {
 
-            }
-        };*/
 
 
         System.out.println("Starting thread via executor service");
+
         ExecutorService executorService = Executors.newFixedThreadPool(300);
         executorService.submit(r);
         executorService.submit(anotherR);

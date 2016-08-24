@@ -14,16 +14,18 @@ public class CallableDemo {
     public static void main(String [] args) {
 
         Callable<String> myCallable = () -> "Hello";
+
+
+
+        ExecutorService executorService = Executors.newFixedThreadPool(10);
+        executorService.submit(myCallable);
+
         try {
             String myFuture = myCallable.call();
             System.out.println(myFuture);
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-        ExecutorService executorService = Executors.newFixedThreadPool(10);
-        executorService.submit(myCallable);
 
 
     }

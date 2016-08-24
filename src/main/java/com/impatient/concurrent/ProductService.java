@@ -1,4 +1,4 @@
-package com.impatient.locking;
+package com.impatient.concurrent;
 
 
 

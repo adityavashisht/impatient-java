@@ -60,5 +60,18 @@ public class ListSample {
         }
 
 
+        MockInterface mockInterface = new MockInterface() {
+            @Override
+            public void methodA() {
+
+            }
+
+            @Override
+            public void methodB() {
+
+            }
+        };
+
+
     }
 }
