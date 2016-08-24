@@ -15,11 +15,13 @@ public class KitchenDemo {
         ChunkChopper chunkChopper = new ChunkChopper();
         DishMaker dishMaker = new DishMaker(chunkChopper);
 
-        Vegetable tomato = new Vegetable();
-        tomato.setChop(true);
+        Vegetable vegetable = new Vegetable();
+        vegetable.setChop(true);
+        vegetable.setName(VegetableType.TOMATO.name());
+        vegetable.setVegetableType(VegetableType.TOMATO);
 
         List<Ingredient> ingredientList = new ArrayList<>();
-        ingredientList.add(tomato);
+        ingredientList.add(vegetable);
 
         dishMaker.makeDish(ingredientList);
     }
