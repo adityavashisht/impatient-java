@@ -24,6 +24,15 @@ public class ProductService {
 
     public synchronized String getNewMethod() {
 
+
+
+
+
+
+
+
+
+
         return "new Product";
 
     }

@@ -7,7 +7,7 @@ public interface ProfileService {
 
 
 
-    String create(String name) throws ProfileException;
+    String create(String name) throws ProfileException, Exception, RuntimeException;
 
 
 }

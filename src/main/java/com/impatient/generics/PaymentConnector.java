@@ -5,8 +5,8 @@ package com.impatient.generics;
  */
 public class PaymentConnector <R,S> {
 
-    private R r;
-    private S s;
+    private R r;// request
+    private S s;// response
 
     public PaymentConnector(R r, S s) {
         this.r = r;

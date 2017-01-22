@@ -10,6 +10,7 @@ public class ProfileDriver {
 
     public static void main(String[] args) {
         ProfileService profileService = new ProfileServiceImpl();
+
         List<String> names = new ArrayList<>();
         names.add("ADY");
         names.add("GEETHA");
@@ -22,8 +23,9 @@ public class ProfileDriver {
         int counter = 0;
 
         for (String name : names) {
+
             try {
-                if(allow) {
+                if (allow) {
                     String value = profileService.create(name);
                     System.out.println(value);
                 }
@@ -31,8 +33,9 @@ public class ProfileDriver {
                 System.out.println("Error " + pe.getMessage());
                 //allow = false;
                 counter++;
-            }
-            finally {
+            } catch (Exception ex) {
+
+            } finally {
 
             }
 

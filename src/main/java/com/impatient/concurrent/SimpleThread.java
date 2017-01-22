@@ -20,6 +20,10 @@ public class SimpleThread {
 
         };
 
+
+        Runnable nonAnnoymous = new RunnableNonAnonymous();
+        nonAnnoymous.run();
+
         Runnable runnableAnonymous = new Runnable() {
             @Override
             public void run() {
@@ -58,6 +62,7 @@ public class SimpleThread {
         System.out.println("Starting thread via executor service");
 
         ExecutorService executorService = Executors.newFixedThreadPool(300);
+
         executorService.submit(r);
         executorService.submit(anotherR);
         executorService.submit(three);
