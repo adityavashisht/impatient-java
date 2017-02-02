@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="dependencyBean" class="com.com.springexample.beans.Dependency"/>
+
+    <bean id="dependencyLookup" class="com.com.springexample.beans.DependencyLookup"/>
+
+    <bean id="componentAware" class="com.com.springexample.beans.ComponentInitializeAware" autowire="byType"/>
+
+</beans>
